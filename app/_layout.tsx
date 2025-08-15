@@ -33,6 +33,10 @@ export default function RootLayout() {
                 name="index"
                 options={{ title: "Notes", headerShown: false }}
               />
+              <Stack.Screen
+                name="note/[id]"
+                options={{ title: "Note", headerShown: false }}
+              />
             </Stack>
           ) : null}
         </SQLite.SQLiteProvider>
