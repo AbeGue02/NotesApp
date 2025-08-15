@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import { Suspense, useState } from "react";
 import { ActivityIndicator, StatusBar, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 function Fallback() {
   return (
@@ -16,7 +17,7 @@ export default function RootLayout() {
   const [dbReady, setDbReady] = useState<boolean>(false);
 
   return (
-    <View style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <Suspense fallback={<Fallback />}>
         <SQLite.SQLiteProvider
           databaseName={"NotesApp.db"}
@@ -41,6 +42,6 @@ export default function RootLayout() {
           ) : null}
         </SQLite.SQLiteProvider>
       </Suspense>
-    </View>
+    </GestureHandlerRootView>
   );
 }
