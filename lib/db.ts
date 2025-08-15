@@ -4,11 +4,11 @@ export async function initDB(db: SQLite.SQLiteDatabase) {
     try {
         await db.runAsync(
             `CREATE TABLE IF NOT EXISTS Notes (
-                ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                Title TEXT NOT NULL,
-                Body TEXT,
-                CreatedAt TEXT NOT NULL,
-                UpdatedAt TEXT
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                body TEXT,
+                createdAt TEXT NOT NULL,
+                updatedAt TEXT
             );`
         )
     } catch (error) {
